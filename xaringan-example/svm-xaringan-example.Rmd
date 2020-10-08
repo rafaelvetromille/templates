@@ -65,7 +65,7 @@ class: center, middle
 
 # Pop Music and Political Science
 ## POSC 0000 -- It Would Be Cool If This Were an Actual Class Presentation
-### I am not funny and you will be forgiven for thinking of me as impossibly uncool.
+### I am not funny and you will be forgiven for thinking of me as impossibly.
 
 
 
