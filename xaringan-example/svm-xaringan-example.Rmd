@@ -1,8 +1,7 @@
 ---
 title: "Steve's Xaringan Presentation"
 subtitle: "POSC 0000 -- It Would Be Cool If This Were an Actual Class Presentation"
-author: "Steven V. Miller<br /> <br /> <br /> Department of Political Science"
-institute: Department of Political Science
+author: "Rafael Vetromille <br/> <br/> Department of Political Science"
 output:
   xaringan::moon_reader:
     css: ["default", "../svm-xaringan-style.css"]
@@ -13,30 +12,33 @@ output:
       countIncrementalSlides: false
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include = FALSE}
 options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(dev = 'svg')
+knitr::opts_chunk$set(dev = 'svg', size = 'tiny')
 options(device = function(file, width, height) {
   svg(tempfile(), width = width, height = height)
 })
+
 library(tidyverse)
 library(stevemisc)
+
 ```
-
-
 
 # Install Xaringan First
 
 Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
 
-```{r eval=FALSE, tidy=FALSE}
+```{r eval = FALSE, tidy = FALSE}
+# Esse é um comentário.
+
 devtools::install_github("yihui/xaringan")
 ```
 
 
 You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
 
-- Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;<sup>1</sup>
+- Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation` ;
+
 - Click the `Knit` button to compile it.
 
 ---
@@ -50,6 +52,17 @@ Hit `Esc` to exit that screen.
 
 
 ---
+
+# construindo um titulo grande de modo que a linha tenha que ser não para ver como fica
+
+Press `h` or `?` to see  controls you have in remark.js.
+
+Hit `Esc` to exit that screen.
+
+
+
+---
+
 
 class: center, middle
 
@@ -65,17 +78,17 @@ class: center, middle
 
 # Pop Music and Political Science
 ## POSC 0000 -- It Would Be Cool If This Were an Actual Class Presentation
-### I am not funny and you will be forgiven for thinking of me as impossibly.
+### I am not funny and you will be forgiven for thinking of me as impossibly uncool.
 
 
 
 ---
 
-# Sheena Easton and Total Conflict
+# Sheena Easton and Total Conflict Conflict
 
 Sheena Easton describes the following scenario for her baby:
 
-- Takes the morning train
+- Takes the morning train;
 - Works from nine 'til five
 - Takes another train home again
 - Finds Sheena Easton waiting for him
@@ -99,11 +112,12 @@ Sheena Easton and her baby are playing a **zero-sum (total conflict)** game.
 
 --
 
-<br />
+<br/>
 
 Notice we have no pure strategies, and no Nash equilibrium.
 
-- Sheena Easton wants to proverbially "match pennies."
+- Sheena Easton wants to proverbially "match pennies".
+
 - Her baby has diametrically opposed preferences, fearing for his safety.
 
 Solution: mixed strategy.
@@ -112,6 +126,7 @@ Solution: mixed strategy.
 background-image: url(https://media.giphy.com/media/dqZSIfquVhSg0/giphy.gif)
 background-position: 50% 50%
 background-size: 100%
+
 class: center, bottom, fullscale
 
 # Run...
@@ -132,7 +147,6 @@ Assume Congressman Astley presides over a competitive district in which he seeks
 Are these promises (if credible) sufficient to secure re-election?
 
 ---
-
 ```{r, eval = T, echo = F, fig.width=11, fig.height = 8, message=F, dev='svg', fig.cap = "SDFSFDSFS"}
 
 df <- data.frame(x = rnorm(1000))
@@ -192,9 +206,6 @@ ggplot(df, aes(x)) +
        subtitle = "Assuming a unidimensional policy space and single-peaked preferences, Congressman Astley is closer to the median voter than his rival and wins the election.") +
   geom_hline(yintercept = 0) +
   geom_vline(xintercept = -4)
-  
-  
-
 
 ```
 
@@ -227,9 +238,8 @@ Billy Ocean released "Caribbean Queen" in 1984.
 
 .pull-right[
 
-![](http://wearethemighty.wpengine.netdna-cdn.com/wp-content/uploads/2016/05/GrenadaNewsCartoon.jpg)
-
-*This seriously happened, btw..*
+![](https://lh3.googleusercontent.com/proxy/f9TVBYLeRJ4jcMm1bSUwwS_nHKKlXoNy97NFUr2NKpgO2jFysA2tXDHKtIKtE3DKIZLAjD62rJe5HOEC1q8GFJC4GjUickLC)
+*This seriously happened, btw ...*
 ]
 
 Billy Ocean is advocating for what became the Goldwater-Nichols Act.
@@ -244,7 +254,6 @@ background-size: 100%
 class: center, bottom, fullscale
 
 # The military establishment was the tiger we wanted to tame all along.
-
 
 ---
 
@@ -269,6 +278,7 @@ These hypotheses are tested using archival data from Ice Cube's life to estimate
 ---
 
 ```{r, eval = T, echo = F, fig.width=11, fig.height = 8, message=F, dev='svg', fig.cap = "SDFSFDSFS"}
+
 interval1 <- -qnorm((1-0.9)/2)  # 90% multiplier
 interval2 <- -qnorm((1-0.95)/2) # 95% multiplier
 
@@ -298,7 +308,7 @@ tribble(
 
 background-image: url(https://media.giphy.com/media/cgh25bl5dgK3u/giphy.gif)
 background-position: 50% 50%
-background-size: 100%
+background-size: 120%
 class: center, bottom, fullscale
 
 ---
@@ -311,12 +321,14 @@ class: center, middle
 
 ---
 
-Show some R code and execute it if you'd like.
+# What is Xaringan? Why Use It?
+
+That’s not satisfying, so another answer to the question hinges on what Xaringan can do relative to my standard approach of using R Markdown to knit to Beamer. Xaringan knits to HTML and provides the user considerable flexibility in what the slideshow can present. If you have an interactive presentation, like leaflet maps or a Shiny app, you won’t adequately present those using a Beamer PDF. Further, maybe you’re the kind of presenter that likes to liven things up using GIFs. To the best of my knowledge, GIFs are non-starters in Beamer PDFs. They’re unnecessary for communicating information. All the same, they might be the presenter’s style. Beamer won’t help but Xaringan will.
 
 ```{r}
 pi
 
-3+5
+3 + 5
 
 rnorm(10)
 
